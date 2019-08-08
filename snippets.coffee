@@ -250,4 +250,4 @@
 
    'setState':
     'prefix': 'ss'
-    'body': "const [ $1, set$1] = use$1(null);"
+    'body': "const [ $1, set$1] = useState(null)"
