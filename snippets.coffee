@@ -66,11 +66,11 @@
 
    'RN height %':
      'prefix': 'hp'
-     'body': """hp('$1%'),"""
+     'body': """hp('$1%')"""
 
    'RN width %':
      'prefix': 'wp'
-     'body': """wp('$1%'),"""
+     'body': """wp('$1%')"""
 
    'RN setState':
      'prefix': 'ss'
@@ -87,6 +87,18 @@
             keyExtractor={item => item._id}
             renderItem={this._renderItem}
           />"""
+
+   'RN Shadow':
+     'prefix': 'sh'
+     'body': """
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.37,
+    shadowRadius: 7.49,
+    elevation: 12,"""
 
 ####################### React Life Cycle ####################
 
@@ -200,10 +212,27 @@
               },
            '''
 
+   'center stuff':
+    'prefix': 'cen'
+    'body': '''
+            justifyContent: 'center',
+            alignItems: 'center'
+           '''
+
+   'contentContainerStyle':
+    'prefix': 'cc'
+    'body': '''
+            contentContainerStyle
+           '''
+
 ########################### eslint stuf f########################
    'ESlint disalble line':
     'prefix': 'dl'
-    'body': "// eslint-disable-line",
+    'body': "// eslint-disable-line"
+
+   'background':
+    'prefix': 'bac'
+    'body': "background: $1"
 
 ########################## utility stuff  f######################
 
@@ -211,3 +240,14 @@
     'prefix': 'bc'
     'body': "// ####################################################"
 
+########################## hooks stuff  f######################
+
+   'useEffect':
+    'prefix': 'eff'
+    'body': "useEffect(() => {
+      $1
+    });"
+
+   'setState':
+    'prefix': 'ss'
+    'body': "const [ $1, set$1] = use$1(null);"
