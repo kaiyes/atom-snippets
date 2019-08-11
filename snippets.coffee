@@ -243,11 +243,20 @@
 ########################## hooks stuff  f######################
 
    'useEffect':
-    'prefix': 'eff'
+    'prefix': 'uf'
     'body': "useEffect(() => {
       $1
     });"
 
-   'setState':
+   'useState':
     'prefix': 'ss'
-    'body': "const [ $1, set$1] = useState(null)"
+    'body': "const [ $1, set$2] = useState($3);"
+
+########################## APOLLO_HOOKS ######################
+   'useQuery':
+    'prefix': 'uq'
+    'body': "const { data, loading, error } = useQuery($1);"
+
+   'useMutation':
+    'prefix': 'um'
+    'body': "const [$1] = useMutation($2);"
