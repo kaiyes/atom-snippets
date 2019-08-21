@@ -219,6 +219,14 @@
             alignItems: 'center'
            '''
 
+   'center web stuff':
+    'prefix': 'cent'
+    'body': '''
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           '''
+
    'contentContainerStyle':
     'prefix': 'cc'
     'body': '''
