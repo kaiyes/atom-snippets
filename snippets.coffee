@@ -233,6 +233,10 @@
             contentContainerStyle
            '''
 
+   'hotpink':
+    'prefix': 'pink'
+    'body': "background: hotpink"
+
 ########################### eslint stuf f########################
    'ESlint disalble line':
     'prefix': 'dl'
@@ -268,3 +272,19 @@
    'useMutation':
     'prefix': 'um'
     'body': "const [$1] = useMutation($2);"
+
+########################## Styled Components ######################
+   'styled div':
+    'prefix': 'sd'
+    'body': '''
+            const ${1} = styled.div`
+            ${2}
+            `
+           '''
+   'styled text':
+    'prefix': 'ssp'
+    'body': '''
+            const ${1} = styled.span`
+            ${2}
+            `
+           '''
