@@ -54,14 +54,14 @@
 
    'RN Text':
      'prefix': 'tx'
-     'body': """<Text style={styles.textContainer}>
-                  $1
+     'body': """<Text style={styles.$1}>
+                  $2
                 </Text>"""
 
    'RN View':
      'prefix': 'vi'
-     'body': """<View style={styles.ViewContainer}>
-                 $1
+     'body': """<View style={styles.$1}>
+                 $2
                </View>"""
 
    'RN height %':
@@ -242,9 +242,9 @@
     'prefix': 'dl'
     'body': "// eslint-disable-line"
 
-   'background':
+   'background Color':
     'prefix': 'bac'
-    'body': "background: $1"
+    'body': "backgroundColor: $1"
 
 ########################## utility stuff  f######################
 
@@ -287,4 +287,13 @@
             const ${1} = styled.span`
             ${2}
             `
+           '''
+   'import wp':
+    'prefix': 'iwp'
+    'body': '''
+            import {
+              widthPercentageToDP as wp,
+              heightPercentageToDP as hp }
+            from 'react-native-responsive-screen'
+
            '''
