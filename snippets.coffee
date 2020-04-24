@@ -131,6 +131,10 @@
      'prefix': 'exg'
      'body': "export default graphql($1)($2);"
 
+   'import hooks':
+     'prefix': 'ih'
+     'body': "import { useMutation, useQuery } from '@apollo/react-hooks'"
+
 
    'async resolver':
     'prefix': 'ar'
@@ -171,6 +175,12 @@
       (item, index) => {
         return ($1)
       })"
+
+   'async function':
+    'prefix': 'asf'
+    'body': "async function $1() {
+        $2
+      }"
 
 ################### Element Stuff #############################
 
@@ -267,11 +277,16 @@
 ########################## APOLLO_HOOKS ######################
    'useQuery':
     'prefix': 'uq'
-    'body': "const { data, loading, error } = useQuery($1);"
+    'body': "const { data, loading, error } = useQuery($1)"
 
    'useMutation':
     'prefix': 'um'
-    'body': "const [$1] = useMutation($2);"
+    'body': "const [$1] = useMutation($2)"
+    
+   'useContext':
+    'prefix': 'uc'
+    'body': "const { $1 } = useContext($2)"
+
 
 ########################## Styled Components ######################
    'styled div':
