@@ -22,35 +22,16 @@
      'prefix': 'id'
      'body': "import {${2}} from '${1}';"
 
-
-   'Import React-Native':
-     'prefix': 'irnd'
-     'body': "import { ${1} } from 'react-native';"
-
-
    'React-Native Text and View':
      'prefix': 'irn'
      'body': """
               import {
                View,
-               Text
+               Text,
+               ${1}
               } from 'react-native';"""
 
 ####################### React Native Stuff ##########################
-
-   'React-Native Class':
-     'prefix': 'rc'
-     'body': """
-               class $1 extends Component {
-                 render() {
-                   return (
-                     <View style={styles.rootContainer}>
-                       $2
-                     </View>
-                   )
-                 }
-               }
-               export default $1;"""
 
    'RN Text':
      'prefix': 'tx'
@@ -71,12 +52,6 @@
    'RN width %':
      'prefix': 'wp'
      'body': """wp('$1%')"""
-
-   'RN setState':
-     'prefix': 'ss'
-     'body': """this.setState({
-                 $1
-               })"""
 
    'RN FlatList':
      'prefix': 'fl'
@@ -102,29 +77,6 @@
 
 ####################### React Life Cycle ####################
 
-   'Component Did Mount':
-     'prefix': 'cdm'
-     'body': """ componentDidMount() {
-                  $1
-                }"""
-
-   'Component will Mount':
-     'prefix': 'cwm'
-     'body': """ componentWillMount() {
-                 $1
-               }"""
-
-   'Component will Un-Mount':
-     'prefix': 'cwu'
-     'body': """ componentWillUnMount() {
-                $1
-              }"""
-
-   'Component did Un-Mount':
-     'prefix': 'cdu'
-     'body': """ componentDidUnMount() {
-             $1
-           }"""
 ################### Graphql Stuff #############################
 
    'graphql export':
@@ -262,6 +214,8 @@
     'prefix': 'bc'
     'body': "// ####################################################"
 
+
+
 ########################## hooks stuff  f######################
 
    'useEffect':
@@ -271,7 +225,7 @@
     });"
 
    'useState':
-    'prefix': 'ss'
+    'prefix': 's'
     'body': "const [ $1, set$2] = useState($3);"
 
 ########################## APOLLO_HOOKS ######################
@@ -282,27 +236,13 @@
    'useMutation':
     'prefix': 'um'
     'body': "const [$1] = useMutation($2)"
-    
+
    'useContext':
     'prefix': 'uc'
     'body': "const { $1 } = useContext($2)"
 
 
 ########################## Styled Components ######################
-   'styled div':
-    'prefix': 'sd'
-    'body': '''
-            const ${1} = styled.div`
-            ${2}
-            `
-           '''
-   'styled text':
-    'prefix': 'ssp'
-    'body': '''
-            const ${1} = styled.span`
-            ${2}
-            `
-           '''
    'import wp':
     'prefix': 'iwp'
     'body': '''
@@ -312,3 +252,12 @@
             from 'react-native-responsive-screen'
 
            '''
+########################## Prettier ######################
+   'prttier ignore':
+    'prefix': 'ig'
+    'body': "// prettier-ignore"
+
+
+   'use focus Effect':
+    'prefix': 'ufe'
+    'body': "import { useFocusEffect } from '@react-navigation/native'"
